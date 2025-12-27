@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TU COMPRA EN CASA</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/home/TU COMPRA EN CASA LOGO DEFINITIVO.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center py-3">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="assets/home/Logo completo vectorizado.png" alt="Logo TU COMPRA EN CASA" class="h-14 sm:h-16 md:h-20 w-auto mr-2">
+                <span class="text-lg sm:text-xl md:text-2xl font-bold leading-tight">TU COMPRA EN CASA</span>
+            </a>
+
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-6 font-semibold">
+                <a href="index.html" class="hover:text-orange-500">Inicio</a>
+                <a href="#zonas" class="hover:text-orange-500">Zonas</a>
+                <a href="index.html" class="hover:text-orange-500">Comunidad</a>
+                <a href="tel:+34655169425" class="text-green-600 hover:text-green-700">📞 655 169 425</a>
+                <a href="mailto:pedidos.tucompraencasa@gmail.com" class="text-blue-600 hover:text-blue-700">📧 Email</a>
+                <a href="https://wa.me/34655169425" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">WhatsApp</a>
+            </div>
+
+            <!-- Mobile button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <a href="index.html" class="block px-4 py-3 border-b">Inicio</a>
+        <a href="#zonas" class="block px-4 py-3 border-b">Zonas</a>
+        <a href="index.html" class="block px-4 py-3 border-b">Comunidad</a>
+        <a href="tel:+34655169425" class="block px-4 py-3 border-b">📞 655 169 425</a>
+        <a href="mailto:pedidos.tucompraencasa@gmail.com" class="block px-4 py-3 border-b">📧 pedidos.tucompraencasa@gmail.com</a>
+        <a href="https://wa.me/34655169425" class="block px-4 py-4 bg-green-600 text-white text-center font-bold text-lg">💬 Escríbeme por WhatsApp</a>
+    </div>
+</nav>
+
+<!-- ===================== HERO / CAROUSEL ===================== -->
+<section class="relative h-screen text-white w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <div class="relative h-full overflow-hidden">
+        <div id="carousel-slides" class="flex h-full transition-transform duration-700 ease-in-out">
+
+            <!-- Slide 1 -->
+            <div class="min-w-full h-full relative">
+                <img src="assets/home/carrito bolsa ok (2).jpg" alt="Mari Carri haciendo la compra" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <div class="text-center px-4 max-w-3xl">
+                        <img src="assets/home/logo completo vectorizado.png" alt="Logo TU COMPRA EN CASA" class="mx-auto mb-6 w-56 md:w-72 lg:w-80">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">TU COMPRA EN CASA</h1>
+                        <p class="text-xl md:text-2xl mb-4">Mientras tú descansas, <strong>Mari Carri</strong> hace tu compra</p>
+                        <p class="mb-6 text-lg opacity-90">Ahorra tiempo, gasolina y dinero. Tú disfrutas, Mari Carri se encarga 🛒</p>
+                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">📲 Escríbeme por WhatsApp</a>
+                        <p class="mt-4 text-sm opacity-70">💻 Web en construcción… ya estamos trabajando.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full h-full relative">
+                <img src="assets/home/mari-carri-supermercado.jpg" alt="Mari Carri en el supermercado" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <div class="text-center px-4 max-w-3xl">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Tú descansas</h2>
+                        <p class="text-xl md:text-2xl mb-6">Mari Carri se encarga de supermercados… y pronto mucho más</p>
+                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">💬 Pídelo por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full h-full relative">
+                <img src="assets/home/mari-carri-pueblo.jpg" alt="Mari Carri repartiendo en el pueblo" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <div class="text-center px-4 max-w-3xl">
+                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Siempre contigo</h2>
+                        <p class="text-xl md:text-2xl mb-6">Llueva o nieve, Mari Carri va por ti</p>
+                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">🛒 Tu compra en casa</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles -->
+        <button id="prev" class="absolute left-6 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-4 rounded-full hover:bg-black/70 transition">←</button>
+        <button id="next" class="absolute right-6 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-4 rounded-full hover:bg-black/70 transition">→</button>
+    </div>
+</section>
+
+<!-- ===================== ZONAS DESTACADAS ===================== -->
+<section id="zonas" class="py-16 max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">¿EN QUÉ TE AYUDA MARI CARRI?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Tarjeta 1 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
+            <img src="assets/home/carrito bolsa ok.png.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Hace la compra por ti</h3>
+                <p>Por ahora trabajamos con supermercados DIA, sin que tengas que moverte de casa.</p>
+                <p class="mt-2 font-semibold opacity-90">Ahorra tiempo y gasolina.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
+            <img src="assets/home/carrito real.jpg.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Te lo lleva a casa</h3>
+                <p>Sin cargar peso ni prisas. Trato cercano y de confianza.</p>
+                <p class="mt-2 font-semibold opacity-90">Comodidad total.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
+            <img src="assets/home/mari-carri-feliz.jpg.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Tranquilidad total</h3>
+                <p>Tú disfrutas tu tiempo mientras Mari Carri trabaja.</p>
+                <p class="mt-2 font-semibold opacity-90">Tu compra, sin preocupaciones.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== JS Carrusel ===================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.getElementById('carousel-slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+});
+</script>
+
+<!-- ===================== Footer ===================== -->
+<footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+        <img src="assets/home/NB TU COMPRA EN CASA LOGO DEFINITIVO.png" alt="Logo TU COMPRA EN CASA" class="mx-auto h-16 sm:h-20 md:h-24 w-auto drop-shadow-lg">
+        <p class="font-bold text-lg">TU COMPRA EN CASA · ¡Tu tarde pa'ti!</p>
+        <p class="text-sm">
+            📞 <a href="tel:+34655169425" class="underline hover:text-green-400">655 169 425</a> &nbsp;|&nbsp;
+            📧 <a href="mailto:pedidos.tucompraencasa@gmail.com" class="underline hover:text-blue-400">pedidos.tucompraencasa@gmail.com</a> &nbsp;|&nbsp;
+            💬 <a href="https://wa.me/34655169425" class="underline hover:text-green-400">WhatsApp</a>
+        </p>
+        <p class="text-xs opacity-80">&copy; 2025 Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>
