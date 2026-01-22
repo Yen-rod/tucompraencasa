@@ -208,14 +208,21 @@
         <!-- FORMULARIO -->
         <form action="https://formsubmit.co/pedidos.tucompraencasa@gmail.com" method="POST" class="space-y-4 text-left">
             <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
+            <!-- Redirigir a la página de inicio tras enviar -->
+            <input type="hidden" name="_next" value="https://www.tucompraencasa.com/#inicio">
+            
             <label class="block font-semibold">Tu nombre</label>
             <input type="text" name="name" required class="w-full p-3 rounded border">
+            
             <label class="block font-semibold">Tu email</label>
             <input type="email" name="email" required class="w-full p-3 rounded border">
+            
             <label class="block font-semibold">¿En qué puedo ayudarte?</label>
             <textarea name="message" rows="4" required class="w-full p-3 rounded border" placeholder="Cuéntame qué necesitas, sin compromiso"></textarea>
+            
             <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Enviar mensaje</button>
         </form>
+
     </div>
 </section>
 
