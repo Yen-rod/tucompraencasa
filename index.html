@@ -3,96 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TU COMPRA EN CASA</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/home/TU COMPRA EN CASA LOGO DEFINITIVO.png">
+    <title>Tu Compra en Casa · Sierra de Gata</title>
+    <link rel="icon" type="image/png" href="assets/home/TU COMPRA EN CASA LOGO DEFINITIVO.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background-image: url("assets/home/fondo-verde.png");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="font-sans text-gray-900">
 
 <!-- ===================== NAVBAR ===================== -->
-<nav class="bg-white shadow-lg sticky top-0 z-50">
+<nav class="bg-white/90 backdrop-blur shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-between items-center py-3">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center">
-                <img src="assets/home/logo-navbar.jpg" alt="Logo Navbar TU COMPRA EN CASA" class="h-14 sm:h-16 md:h-20 w-auto mr-2">
-                <span class="text-lg sm:text-xl md:text-2xl font-bold leading-tight">TU COMPRA EN CASA</span>
+            <a href="#inicio" class="flex items-center">
+                <img src="assets/home/logo-navbar.jpg" class="h-14 md:h-20 mr-2" alt="Logo TU COMPRA EN CASA">
+                <span class="text-lg md:text-2xl font-bold">TU COMPRA EN CASA</span>
             </a>
 
-            <!-- Desktop menu -->
-            <div class="hidden md:flex items-center space-x-6 font-semibold">
-                <!-- <a href="index.html" class="hover:text-orange-500">Inicio</a>
-                <a href="#zonas" class="hover:text-orange-500">Zonas</a>
-                <a href="index.html" class="hover:text-orange-500">Comunidad</a> -->
-                <a href="tel:+34655169425" class="text-green-600 hover:text-green-700">📞 655 169 425</a>
-                <a href="mailto:pedidos.tucompraencasa@gmail.com" class="text-blue-600 hover:text-blue-700">📧 Email</a>
-                <a href="https://wa.me/34655169425?text=Hola%20Jen%20%F0%9F%91%8B%0AMe%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20Tu%20Compra%20en%20Casa." class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">WhatsApp</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 font-semibold">
+                <a href="#inicio" class="hover:text-green-700">Inicio</a>
+                <a href="#conocerme" class="hover:text-green-700">¿Quieres conocerme?</a>
+                <a href="#proyecto" class="hover:text-green-700">El proyecto</a>
+                <a href="#servicios" class="hover:text-green-700">¿Qué hago por ti?</a>
+                <a href="#precios" class="hover:text-green-700">Precios</a>
+                <a href="#contacto" class="text-green-700 font-bold">Contacto</a>
             </div>
 
-            <!-- Mobile button -->
-            <button id="mobile-menu-button" class="md:hidden">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
         </div>
-    </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-        <a href="index.html" class="block px-4 py-3 border-b">Inicio</a>
-        <a href="tel:+34655169425" class="block px-4 py-3 border-b">📞 655 169 425</a>
-        <a href="mailto:pedidos.tucompraencasa@gmail.com" class="block px-4 py-3 border-b">📧 pedidos.tucompraencasa@gmail.com</a>
-        <a href="https://wa.me/34655169425" class="block px-4 py-4 bg-green-600 text-white text-center font-bold text-lg">💬 Escríbeme por WhatsApp</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col mt-2 border-t border-gray-200 md:hidden text-left font-semibold">
+            <a href="#inicio" class="block py-3 px-2 border-b">Inicio</a>
+            <a href="#conocerme" class="block py-3 px-2 border-b">¿Quieres conocerme?</a>
+            <a href="#proyecto" class="block py-3 px-2 border-b">El proyecto</a>
+            <a href="#servicios" class="block py-3 px-2 border-b">¿Qué hago por ti?</a>
+            <a href="#precios" class="block py-3 px-2 border-b">Precios</a>
+            <a href="#contacto" class="block py-3 px-2 text-green-700">Contacto</a>
+        </div>
     </div>
 </nav>
 
-<!-- ===================== HERO / CAROUSEL ===================== -->
-<section class="relative h-screen text-white w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+</script>
+
+<!-- ===================== HERO / SLIDER ===================== -->
+<section id="inicio" class="relative h-[80vh] md:h-screen text-white overflow-hidden">
     <div class="relative h-full overflow-hidden">
-        <div id="carousel-slides" class="flex h-full transition-transform duration-700 ease-in-out">
+        <div id="slides" class="flex h-full transition-transform duration-700 ease-in-out">
 
             <!-- Slide 1 -->
-            <div class="min-w-full h-full relative">
-                <img src="assets/home/carrito bolsa ok (2).jpg" alt="Jen haciendo la compra" class="w-full h-full object-cover">
+            <div class="min-w-full relative">
+                <img src="assets/home/slide1.jpg" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <div class="text-center px-4 max-w-3xl">
-                        <img src="assets/home/logo-hero.png" alt="Logo hero TU COMPRA EN CASA" class="mx-auto mb-6 w-56 md:w-72 lg:w-80">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">TU COMPRA EN CASA</h1>
-                        <p class="text-xl md:text-2xl mb-4">Mientras tú descansas, <strong>Yen</strong> hace tu compra y tus recados por ti</p>
-                        <p class="mb-6 text-lg opacity-90">Ahorra tiempo, gasolina y esfuerzo. Tú disfrutas, yo me encargo 🛒</p>
-                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">📲 Escríbeme por WhatsApp</a>
-                        <p class="mt-4 text-sm opacity-70">💻 Web en construcción… mejorándola para ti.</p>
+                        <img src="assets/home/logo-hero.png" class="mx-auto mb-4 w-48 md:w-64">
+                        <h1 class="text-3xl md:text-6xl font-bold mb-4">Tú descansas,<br>yo me encargo</h1>
+                        <p class="text-lg md:text-2xl">de la compra y los recados, para que ganes tiempo y tranquilidad</p>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="min-w-full h-full relative">
-                <img src="assets/home/mari-carri-supermercado.jpg" alt="Jen en el supermercado" class="w-full h-full object-cover">
+            <div class="min-w-full relative">
+                <img src="assets/home/slide2.jpg" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <div class="text-center px-4 max-w-3xl">
-                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Tú descansas</h2>
-                        <p class="text-xl md:text-2xl mb-6">Yo me encargo de tus compras y recados… y pronto muchos más servicios</p>
-                        <p class="text-xl md:text-2xl mb-6">Supermercados DIA y Mercadona. Servicio personalizado y de confianza.</p>
-                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">💬 Pídelo por WhatsApp</a>
+                        <h2 class="text-3xl md:text-6xl font-bold mb-4">Siempre a tu lado</h2>
+                        <p class="text-lg md:text-2xl">Hago la compra y los recados, para que disfrutes tu tiempo libre.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="min-w-full h-full relative">
-                <img src="assets/home/mari-carri-pueblo.jpg" alt="Jen repartiendo en el pueblo" class="w-full h-full object-cover">
+            <div class="min-w-full relative">
+                <img src="assets/home/slide3.jpg" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                     <div class="text-center px-4 max-w-3xl">
-                        <h2 class="text-4xl md:text-6xl font-bold mb-4">Siempre cerca de ti</h2>
-                        <p class="text-xl md:text-2xl mb-6">Llueva o nieve, hago tus recados y reparto tu compra por los pueblos de la Sierra de Gata</p>
-                        <a href="https://wa.me/34655169425" class="inline-block bg-green-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-700 transition">🛒 Tu compra en casa</a>
+                        <h2 class="text-3xl md:text-6xl font-bold mb-4">Confiable y cercano</h2>
+                        <p class="text-lg md:text-2xl">Entrega de pedidos y recados con total transparencia y cercanía.</p>
                     </div>
                 </div>
             </div>
@@ -105,85 +112,152 @@
     </div>
 </section>
 
-<!-- ===================== ZONAS DESTACADAS ===================== -->
-<section id="zonas" class="py-16 max-w-7xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">¿CÓMO TE AYUDO?</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Tarjeta 1 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
-            <img src="assets/home/carrito bolsa ok.png.jpg" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Hago la compra por ti</h3>
-                <p>Supermercados DIA y Mercadona, siguiendo exactamente tus indicaciones.</p>
-                <p class="mt-2 font-semibold opacity-90">Ahorra tiempo, gasolina y esfuerzo.</p>
-            </div>
+<!-- ===================== CONOCERME ===================== -->
+<section id="conocerme" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <img src="assets/home/retrato.png" class="rounded-xl shadow-lg">
+        <div class="bg-white/80 backdrop-blur rounded-xl p-6">
+            <h2 class="text-3xl font-bold mb-4">Hola, soy Yen</h2>
+            <p class="text-lg mb-4">Vivo en Hoyos y desde aquí puse en marcha Tu Compra en Casa.</p>
+            <p class="text-lg mb-4">Es un servicio local pensado para ayudarte en tu día a día, sobre todo si no tienes tiempo, no puedes desplazarte o simplemente te apetece descansar.</p>
+            <p class="text-lg">Trabajo con cercanía, trato personal y total transparencia. Cada pedido lo hago como si fuera para mí.</p>
         </div>
-
-        <!-- Tarjeta 2 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
-            <img src="assets/home/mari-carri-feliz.jpg.jpg" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Recados y ayuda diaria</h3>
-                <p>Farmacias, ferreterías, tiendas especializadas… todo lo que necesites de Moraleja, sin que tengas que desplazarte.</p>
-                <p class="mt-2 font-semibold opacity-90">Tu día a día más fácil.</p>
-            </div>
-        </div>
-
-        <!-- Tarjeta 3 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center">
-            <img src="assets/home/carrito real.jpg.jpg" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <h3 class="text-xl font-bold mb-2">Te llevo tu pedido</h3>
-                <p>Entrega a tu casa o punto de encuentro. Trato cercano, confiable y flexible.</p>
-                <p class="mt-2 font-semibold opacity-90">Comodidad total.</p>
-            </div>
-        </div>
-
-
-        
-
     </div>
 </section>
 
-<!-- ===================== JS Carrusel ===================== -->
+<!-- ===================== PROYECTO ===================== -->
+<section id="proyecto" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div class="bg-white/80 backdrop-blur rounded-xl p-6">
+            <h2 class="text-3xl font-bold mb-4">¿Qué es Tu Compra en Casa?</h2>
+            <p class="text-lg mb-4">Un servicio cercano que acerca la compra y los recados a los pueblos de la Sierra de Gata.</p>
+            <p class="text-lg mb-4">Hago la compra en DIA Moraleja y Mercadona Coria, y realizo recados en Moraleja (farmacias, ferreterías, imprentas…)</p>
+            <p class="text-lg">Trabajo habitualmente en Hoyos, Villasbuenas y Acebo, pero si vives en otra zona cercana, escríbeme y vemos la mejor forma de ayudarte.</p>
+        </div>
+        <img src="assets/home/proyecto.jpeg" class="rounded-xl shadow-lg">
+    </div>
+</section>
+
+<!-- ===================== SERVICIOS ===================== -->
+<section id="servicios" class="py-20">
+    <h2 class="text-3xl font-bold text-center mb-12">¿Qué hago por ti?</h2>
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+        <div class="bg-white/80 backdrop-blur rounded-xl shadow overflow-hidden">
+            <img src="assets/home/laCompra.jpg" class="h-48 w-full object-cover">
+            <div class="p-6">
+                <h3 class="font-bold text-xl mb-2">La compra</h3>
+                <p>Compro en DIA o Mercadona siguiendo exactamente lo que me indiques. Siempre entrego el ticket original.</p>
+            </div>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-xl shadow overflow-hidden">
+            <img src="assets/home/recados.jpg" class="h-48 w-full object-cover">
+            <div class="p-6">
+                <h3 class="font-bold text-xl mb-2">Recados</h3>
+                <p>Farmacias, ferreterías, imprentas y pequeños encargos en Moraleja, para que no tengas que desplazarte.</p>
+            </div>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-xl shadow overflow-hidden">
+            <img src="assets/home/reparto.jpg" class="h-48 w-full object-cover">
+            <div class="p-6">
+                <h3 class="font-bold text-xl mb-2">Reparto</h3>
+                <p>Te llevo el pedido a tu pueblo o directamente a tu casa, según prefieras.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PRECIOS ===================== -->
+<section id="precios" class="py-20">
+    <h2 class="text-3xl font-bold text-center mb-4">Precios claros y justos</h2>
+    <p class="text-center mb-12 text-lg">El cliente paga el importe exacto del ticket más la tarifa del servicio correspondiente.</p>
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white/80 backdrop-blur rounded-xl p-6 shadow">
+            <h3 class="font-bold mb-4">🧾 Recados (Moraleja)</h3>
+            <p>1–2 recados → 8 €</p>
+            <p>3–4 recados → 12 €</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-xl p-6 shadow">
+            <h3 class="font-bold mb-4">🛒 DIA (Moraleja)</h3>
+            <p>Hasta 100 € → 8 €</p>
+            <p>101–150 € → 12 €</p>
+            <p>151 € o más → 15 €</p>
+            <p class="mt-2 text-sm">+4 € si se combinan 1–2 recados</p>
+        </div>
+        <div class="bg-white/80 backdrop-blur rounded-xl p-6 shadow">
+            <h3 class="font-bold mb-4">🛒 Mercadona (Coria)</h3>
+            <p>Hasta 100 € → 12 €</p>
+            <p>101–150 € → 15 €</p>
+            <p>151 € o más → 18 €</p>
+            <p class="mt-2 text-sm">+4 € si se combinan 1–2 recados</p>
+        </div>
+    </div>
+    <p class="text-center mt-10 text-lg">📅 Servicio los <strong>martes y jueves</strong><br>⏰ Cierre de pedidos el día anterior (martes → lunes · jueves → miércoles)</p>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section id="contacto" class="py-20 text-center">
+    <div class="bg-white/80 backdrop-blur rounded-xl max-w-3xl mx-auto p-8">
+        <h2 class="text-3xl font-bold mb-6">Estoy aquí para ti</h2>
+        <p class="text-lg mb-6">Escríbeme o llámame sin compromiso. Cuéntame qué necesitas y lo vemos fácil.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4 mb-6">
+            <a href="mailto:pedidos.tucompraencasa@gmail.com" class="bg-green-600 text-white px-6 py-3 rounded-xl">📧 Email</a>
+            <a href="https://wa.me/34655169425" class="bg-green-700 text-white px-6 py-3 rounded-xl">💬 WhatsApp</a>
+        </div>
+        <p class="font-semibold mb-8">📞 655 169 425</p>
+
+        <!-- FORMULARIO -->
+        <form action="https://formsubmit.co/pedidos.tucompraencasa@gmail.com" method="POST" class="space-y-4 text-left">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde la web">
+            <label class="block font-semibold">Tu nombre</label>
+            <input type="text" name="name" required class="w-full p-3 rounded border">
+            <label class="block font-semibold">Tu email</label>
+            <input type="email" name="email" required class="w-full p-3 rounded border">
+            <label class="block font-semibold">¿En qué puedo ayudarte?</label>
+            <textarea name="message" rows="4" required class="w-full p-3 rounded border" placeholder="Cuéntame qué necesitas, sin compromiso"></textarea>
+            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-xl font-bold">Enviar mensaje</button>
+        </form>
+    </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="text-center py-6 text-gray-700">
+    <p class="font-bold">TU COMPRA EN CASA</p>
+    <p class="text-sm">© 2026 · Todos los derechos reservados.</p>
+</footer>
+
+<!-- ===================== JS SLIDER ===================== -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.getElementById('carousel-slides');
-  const totalSlides = slides.children.length;
-  let index = 0;
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    let index = 0;
 
-  document.getElementById('next').addEventListener('click', () => {
-    index = (index + 1) % totalSlides;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  });
+    const showSlide = (i) => {
+        slides.style.transform = `translateX(-${i * 100}%)`;
+    };
 
-  document.getElementById('prev').addEventListener('click', () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  });
+    document.getElementById('next').addEventListener('click', () => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    });
 
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+    document.getElementById('prev').addEventListener('click', () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+    });
+
+    // Slider automático cada 5 segundos
+    setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+    }, 5000);
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 });
 </script>
-
-<!-- ===================== Footer ===================== -->
-<footer class="bg-gray-800 text-white py-8 mt-12">
-    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
-        <img src="assets/home/logo-footer.png" alt="Logo footer TU COMPRA EN CASA" class="mx-auto h-16 sm:h-20 md:h-24 w-auto drop-shadow-lg">
-        <p class="font-bold text-lg">TU COMPRA EN CASA · ¡y tu tarde pa'ti!</p>
-        <p class="text-sm">
-            📞 <a href="tel:+34655169425" class="underline hover:text-green-400">655 169 425</a> &nbsp;|&nbsp;
-            📧 <a href="mailto:pedidos.tucompraencasa@gmail.com" class="underline hover:text-blue-400">pedidos.tucompraencasa@gmail.com</a> &nbsp;|&nbsp;
-            💬 <a href="https://wa.me/34655169425" class="underline hover:text-green-400">WhatsApp</a>
-        </p>
-        <p class="text-xs opacity-80">&copy; 2026 Todos los derechos reservados.</p>
-    </div>
-</footer>
 
 </body>
 </html>
